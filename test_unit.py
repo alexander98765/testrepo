@@ -1,5 +1,6 @@
 import unittest
 from App import app 
+from utils import checkEmail 
 
 class TestHelloWorld(unittest.TestCase):
 
@@ -10,6 +11,10 @@ class TestHelloWorld(unittest.TestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         #self.assertIn(b'Hello, World!', response.data)
+
+    def test_email(self):
+        result = checkEmail("alex@gmail.com")
+        self.assertEqual(result, True)
 
 if __name__ == '__main__':
     unittest.main()
