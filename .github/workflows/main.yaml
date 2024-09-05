@@ -37,6 +37,7 @@ jobs:
 
       - name: flake8 Lint
         uses: py-actions/flake8@v2
+        continue-on-error: false
         with:
           exclude: |
             "test_unit.py"
