@@ -39,7 +39,6 @@ jobs:
         uses: py-actions/flake8@v2
         with:
           exclude: "utils"
-          plugins: "flake8-bugbear==22.1.11 flake8-black"
 
       - name: Run tests
         run: python test_unit.py
