@@ -1,5 +1,6 @@
 def checkEmail(email):
     flag = True
+    print('al')
     return flag
 
 
