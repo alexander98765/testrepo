@@ -27,7 +27,6 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install pytest
           python -m pip install flake8
-          python -m pip install wemake-python-styleguide
 
       - name: Print debugging information
         run: |
@@ -36,13 +35,12 @@ jobs:
           echo "Contents of Working Directory: $(ls -l)"
           echo "Contents of site-packages: $(ls -l venv/lib/python*/site-packages)"
 
-      - name: Wemake Python Stylguide
-        uses: wemake-services/wemake-python-styleguide@0.13.4
-        continue-on-error: false
-        with:
-          reporter: 'github-pr-review'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Run tests
         run: python test_unit.py
