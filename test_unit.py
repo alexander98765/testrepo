@@ -1,6 +1,7 @@
 import unittest
 from App import app 
-from utils import checkEmail 
+from utils.utils import checkEmail 
+from beings.contactform import Contactform 
 
 class TestHelloWorld(unittest.TestCase):
 

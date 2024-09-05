@@ -34,5 +34,13 @@ jobs:
           echo "Contents of Working Directory: $(ls -l)"
           echo "Contents of site-packages: $(ls -l venv/lib/python*/site-packages)"
 
+      - name: Wemake Python Stylguide
+        uses: wemake-services/wemake-python-styleguide@0.13.4
+        continue-on-error: false
+        with:
+          reporter: 'github-pr-review'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run tests
         run: python test_unit.py
