@@ -41,6 +41,7 @@ jobs:
           exclude: |
             "test_unit.py"
             "utils"
+            "venv"
 
       - name: Run tests
         run: python test_unit.py
