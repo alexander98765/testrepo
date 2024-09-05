@@ -4,5 +4,5 @@ def checkEmail(email):
     return flag
 
 
-def test_function(          param               ):
+def test_function(param):
     print("Alex")
