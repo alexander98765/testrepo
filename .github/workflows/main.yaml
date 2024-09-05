@@ -38,7 +38,7 @@ jobs:
       - name: flake8 Lint
         uses: py-actions/flake8@v2
         with:
-          exclude: "utils"
+          exclude: "test_unit.py"
 
       - name: Run tests
         run: python test_unit.py
