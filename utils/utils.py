@@ -6,3 +6,4 @@ def checkEmail(email):
 
 def test_function(param):
     print("Alex")
+    print("test")
