@@ -16,7 +16,7 @@ RUN pip3 install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 # Expose port 5000 for the Flask application
 EXPOSE 3000
 
-ENTRYPOINT [ "python3" ]
+ENTRYPOINT [ "python" ]
 
 # Define the command to run the Flask application using Gunicorn
 CMD [ "python", "App.py" ]
