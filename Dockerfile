@@ -19,5 +19,4 @@ EXPOSE 3000
 ENTRYPOINT [ "python3" ]
 
 # Define the command to run the Flask application using Gunicorn
-#CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
-CMD [ "App.py" ]
+CMD [ "python", "App.py" ]
