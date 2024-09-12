@@ -14,10 +14,9 @@ COPY App.py requirements.txt  /testrepo/
 RUN pip3 install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 # Expose port 5000 for the Flask application
-EXPOSE 3000
+EXPOSE 5000
 
 ENTRYPOINT [ "python3" ]
 
 # Define the command to run the Flask application using Gunicorn
-#CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
-CMD [ "App.py" ]
+CMD [ "python", "App.py" ]
