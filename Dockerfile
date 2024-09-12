@@ -14,7 +14,7 @@ COPY App.py requirements.txt  /testrepo/
 RUN pip3 install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 # Expose port 5000 for the Flask application
-EXPOSE 5000
+EXPOSE 3000
 
 ENTRYPOINT [ "python3" ]
 
